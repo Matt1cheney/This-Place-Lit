@@ -9,6 +9,7 @@ var PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 // Table Info
 var tables = [
@@ -20,35 +21,39 @@ var tables = [
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-// Displays all characters
-app.get("/api/characters", function(req, res) {
-  return res.json(characters);
+app.get("/reservations", function(req, res) {
+  res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
+// // Displays all characters
+// app.get("/api/characters", function(req, res) {
+//   return res.json(characters);
+// });
 
-// Create New Characters - takes in JSON input
-app.post("/api/characters", function(req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newCharacter = req.body;
 
-  // Using a RegEx Pattern to remove spaces from newCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+// // Create New Characters - takes in JSON input
+// app.post("/api/characters", function(req, res) {
+//   // req.body hosts is equal to the JSON post sent from the user
+//   // This works because of our body parsing middleware
+//   var newCharacter = req.body;
 
-  console.log(newCharacter);
+//   // Using a RegEx Pattern to remove spaces from newCharacter
+//   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+//   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
 
-  characters.push(newCharacter);
+//   console.log(newCharacter);
 
-  res.json(newCharacter);
-});
+//   characters.push(newCharacter);
+
+//   res.json(newCharacter);
+// });
 
 // Starts the server to begin listening
 // =============================================================
