@@ -27,12 +27,14 @@ $(document).ready(function(){
     
     console.log(newReservation);
     
-    $.post("/api/tables", newReservation)
-    .then(function(data) {
-      console.log("reservations.html", data);
-      alert("Adding reservation...");
+    //returns true is added to table, false if waitlist
+    $.post(window.location.origin + "/api/tables", newReservation).then(function(data) {
+      if (data) {
+        alert("You've been seated!");
+      }
+      else {
+        alert("Tables are full, but you've been added to the waitlist...");
+      }
     });
   });
 });
-  
-  
