@@ -27,3 +27,8 @@
   80%      { color: hsl(24, 94%, 52%); }
   90%      { color: hsl(22, 79%, 43%); }
 }
+.lead {
+  font-family: 'Mukta', sans-serif;
+  font-size: 29px;
+  font-weight: bold;
+}
