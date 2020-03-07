@@ -1,3 +1,29 @@
 .title {
   font-family: 'Homemade Apple', cursive;
 }
+.title {
+  animation: inherit;
+}
+.title {
+  color: hsl(324, 70%, 45%);
+  animation: wheelHueColor 10s infinite;
+  /* background-color: currentColor; */
+}
+@supports (background-blend-mode: overlay) {
+  .title {
+    /* background-image: linear-gradient(45deg, white 10%, black 90%); */
+    background-blend-mode: overlay;
+  }
+}
+@keyframes wheelHueColor {
+  from, to { color: hsl(0, 91%, 49%); }
+  10%      { color: rgb(131, 8, 8); }
+  20%      { color: rgb(105, 5, 5); }
+  30%      { color: rgb(80, 7, 7); }
+  40%      { color: hsl(0, 90%, 12%); }
+  50%      { color: hsl(0, 100%, 2%); }
+  60%      { color: hsl(35, 90%, 15%); }
+  70%      { color: hsl(29, 72%, 40%); }
+  80%      { color: hsl(24, 94%, 52%); }
+  90%      { color: hsl(22, 79%, 43%); }
+}
