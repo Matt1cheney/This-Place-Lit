@@ -42,7 +42,7 @@ app.post("/api/tables", function(req, res) {
 
   res.send(tables.length <= 5);
   }
-});
+);
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
