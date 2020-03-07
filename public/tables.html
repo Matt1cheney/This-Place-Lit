@@ -16,6 +16,7 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <!-- create heading -->
@@ -29,10 +30,10 @@
           </h1>
           <p class="text-center lead">Make a reservation</p>
           <div class="text-center">
-            <a href="reservations.html"
+            <a href="public\reservations.html"
               ><button class="btn btn-danger">Make a reservation</button></a
             >
-            <a href="index.html"
+            <a href="public\index.html"
               ><button class="btn bg-white"><i class="fas fa-home"></i></button
             ></a>
           </div>
@@ -40,6 +41,21 @@
       </div>
     </div>
     <!-- create tables filled -->
-    
+    <div class="row mb-3">
+      <div class="col-md-9 mx-auto container-fluid">
+        <ul class="list-group" id="currentTables">
+          <li class="list-group-item bg-light">current reservations</li>
+          <!-- <li class="list-group-item"></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-9 mx-auto container-fluid">
+        <ul class="list-group" id="waitingList">
+          <li class="list-group-item bg-light">waiting List</li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </body>
 </html>
